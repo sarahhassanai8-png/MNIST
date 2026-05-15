@@ -85,8 +85,8 @@ Two different optimizers were tested:
 
 | Optimizer | Test Accuracy |
 | --------- | ------------- |
-| Adam      | 99.15%        |
-| SGD       | 99.05%        |
+| Adam      | 99.26%        |
+| SGD       | 99.10%        |
 
 ---
 
