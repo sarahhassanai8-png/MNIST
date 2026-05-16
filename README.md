@@ -1,118 +1,185 @@
-# MNIST
-# MNIST Handwritten Digit Classification using CNN
+# 🧠 MNIST Handwritten Digit Classification using CNN
 
-## Project Overview
+## 📌 Project Overview
 
 This project focuses on handwritten digit classification using a Convolutional Neural Network (CNN) implemented with PyTorch.
-The model was trained and evaluated on the MNIST dataset, which is one of the most popular benchmark datasets in Deep Learning and Computer Vision.
 
-The project demonstrates the complete Deep Learning workflow including:
+The model was trained and evaluated on the famous MNIST dataset, one of the most widely used benchmark datasets in Deep Learning and Computer Vision.
 
-* Data preprocessing
-* Building a CNN architecture
-* Model training
-* Performance evaluation
-* Optimizer comparison
+The project demonstrates the full Deep Learning pipeline including:
 
----
-
-# Dataset
-
-The project uses the MNIST dataset, which contains grayscale images of handwritten digits from 0 to 9.
-
-Dataset details:
-
-* 60,000 training images
-* 10,000 testing images
-* Image size: 28 × 28 pixels
-* Number of classes: 10
+- Data preprocessing
+- CNN model design
+- Model training and validation
+- Performance evaluation
+- Optimizer comparison
 
 ---
 
-# Data Preprocessing
+# 📂 Dataset
 
-Several preprocessing techniques were applied before training:
+The project uses the MNIST Handwritten Digits Dataset.
 
-* Converting images into tensors using `ToTensor()`
-* Normalizing pixel values using `Normalize()`
-* Loading data using PyTorch `DataLoader`
+Dataset Details:
+
+| Property | Value |
+|---|---|
+| Training Images | 60,000 |
+| Testing Images | 10,000 |
+| Image Size | 28 × 28 Pixels |
+| Image Type | Grayscale |
+| Number of Classes | 10 Digits (0–9) |
 
 ---
 
-# Model Architecture
+# ⚙️ Data Preprocessing
+
+Before training, several preprocessing techniques were applied:
+
+- Converting images into tensors using ToTensor()
+- Normalizing pixel values using Normalize()
+- Loading data using DataLoader
+
+### Applied Transformations
+transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize((0.5,), (0.5,))
+])
+
+---
+
+# 🧠 CNN Model Architecture
 
 A Convolutional Neural Network (CNN) was implemented for image classification.
 
 The architecture includes:
 
-* Convolutional Layers for feature extraction
-* ReLU activation function
-* MaxPooling layers for dimensionality reduction
-* Dropout layer to reduce overfitting
-* Fully Connected layers for classification
-
-Model Flow:
-
-Input Image
-→ Convolution Layer
-→ ReLU
-→ MaxPooling
-→ Convolution Layer
-→ ReLU
-→ MaxPooling
-→ Flatten
-→ Fully Connected Layer
-→ Output Layer
+- Convolutional Layers for feature extraction
+- ReLU activation function
+- MaxPooling layers for dimensionality reduction
+- Batch Normalization
+- Dropout layer to reduce overfitting
+- Fully Connected layers for classification
 
 ---
 
-# Training
+# 🔄 Model Flow
+Input Image
+   ↓
+Convolution Layer
+   ↓
+ReLU Activation
+   ↓
+MaxPooling
+   ↓
+Convolution Layer
+   ↓
+ReLU Activation
+   ↓
+MaxPooling
+   ↓
+Flatten
+   ↓
+Fully Connected Layer
+   ↓
+Output Layer
+
+---
+
+# 🚀 Training
 
 The model was trained using:
 
-* CrossEntropyLoss as the loss function
-* Multiple epochs for learning
-* GPU acceleration when available
+| Parameter | Value |
+|---|---|
+| Loss Function | CrossEntropyLoss |
+| Batch Size | 64 |
+| Epochs | 5 |
+| Learning Rate | 0.001 |
+| Device | CPU / GPU |
 
-Two different optimizers were tested:
+---
+
+# 🔥 Optimizers Used
+
+Two different optimizers were tested and compared:
 
 1. Adam Optimizer
 2. SGD Optimizer
 
 ---
 
-# Experiments and Results
+# 📊 Experiments and Results
 
 | Optimizer | Test Accuracy |
-| --------- | ------------- |
-| Adam      | 99.26%        |
-| SGD       | 99.10%        |
+|---|---|
+| Adam | 99.24% |
+| SGD | 99.24% |
 
 ---
 
-# Performance Analysis
+# 📈 Performance Analysis
 
 Both optimizers achieved excellent performance on the MNIST dataset.
 
-Observations:
+### Observations
 
-* Adam achieved slightly higher accuracy
-* SGD also produced very strong results
-* The difference between both optimizers was very small because MNIST is considered a relatively simple dataset
-
----
-
-# Technologies Used
-
-* Python
-* PyTorch
-* Torchvision
-* Matplotlib
+- Adam achieved very fast convergence during training
+- SGD also produced strong and stable results
+- Both optimizers achieved over 99% accuracy
+- MNIST is considered a relatively simple dataset for CNN models
 
 ---
 
-# Conclusion
+# 🛠️ Technologies Used
 
-This project successfully demonstrated how CNNs can achieve very high accuracy in handwritten digit classification tasks.
+- Python
+- PyTorch
+- Torchvision
+- Matplotlib
+- NumPy
 
-The implemented model achieved more than 99% testing accuracy, showing the effectiveness of Convolutional Neural Networks for image recognition problems.
+---
+
+# 📉 Visualizations
+
+The project includes visualizations for:
+
+- Training Loss
+- Validation Loss
+- Training Accuracy
+- Validation Accuracy
+
+These graphs help analyze the learning performance of the model during training.
+
+---
+
+# ▶️ How to Run the Project
+
+## 1️⃣ Install Dependencies
+pip install torch torchvision matplotlib numpy
+
+## 2️⃣ Open Jupyter Notebook
+jupyter notebook
+
+## 3️⃣ Run the Notebook
+
+Open and run:
+deep mnist.ipynb
+
+---
+
+# 📁 Project Structure
+├── deep mnist.ipynb
+├── data/
+├── README.md
+└── images/
+
+---
+
+# 🎯 Conclusion
+
+This project successfully demonstrated how Convolutional Neural Networks (CNNs) can achieve very high accuracy in handwritten digit classification tasks.
+
+The implemented model achieved more than 99% testing accuracy, showing the effectiveness of CNNs in image recognition and computer vision applications.
+
